@@ -1,0 +1,117 @@
+# 1. pado total en la llentera
+cantidad = int(input('ingrese el numero de llantas a comprar: '))
+
+if cantidad < 5:
+    precio = 150
+else:
+    precio = 120
+
+total = cantidad * precio
+print(f'total a pagar es: s/{total}')   
+
+# 2. el mayor y menor de 3 numeros
+1 = float (input('ingrese el primer numero: '))
+2 = float (input('ingrese el segundo numero: '))
+3 = float (input('ingrese el tercer numero: '))
+
+mayor = max(1,2,3)
+menor = min(1,2,3)
+
+print(f'el numero meyor es: {mayor}')
+print(f('el munero menor es: {menor}'))
+
+# 3.determina si tributa y calcular su monto
+edad = int(input('ingrese su edad: '))
+ingreso = float(input('ingrese su ingresos mensuales (s/): '))
+
+if edad > 18 and Ingresos >= 3000:
+    tributar = ingreso * 0.05
+    print (f' tiene que tributar. monto: s/{tributar}')
+else:
+    print('No tiene que tributar.') 
+
+# 4. el pago de colegiatura con descuento
+materias = int(input('ingrese la cantidad de materias que cursa: '))
+promedio = float(input('ingrese el promedio del ultimo periodo: '))
+
+total_de_costo = materias * 100
+if promedio >= 18:
+    descuento = (materias / 2) * 50
+    total_de_costo -= descuento
+print(f'El monto total es: s/{total_de_costo}')
+
+# 5. los lados de un triangulo
+L1 = float(input('Ingrese el lado 1: '))
+L2 = float(input('Ingrese el lado 2: '))
+L3 = float(input('ingrese el lado 3: '))
+
+if L1 == L2 and L2 == L3:
+    perimetro = L1 + L2 + L3
+    print(f'trinagulo equilatero. perimetro:{perimetro}')
+ elif L1 == L2 or L1 == L3 or L2 == L3:
+    print('triangulo isosceles.')
+ else:
+    print('triangulo escaleno.')
+
+# 6. La hora N segundos despues
+H = int(input('ingrese la hora (0-23): '))
+M = int(input('ingrese los minutos (0-59): '))
+S = int(input('ingrese los segundos (0-59): '))
+N = int(input('ingrese los segundos a sumar (N): '))
+
+total_segundos = (H * 3600 + M * 60 + S + N) % 86400
+
+nueva_H = total_segundos // 3600
+nuevo_M = (total_segundos % 3600) // 60
+nuevo_S = total_segundos % 60
+print(f'la hora {N} segundos despues sera: {nueva_H:02d}:{nuevo_M:02d}:{nuevo_S:02d}')
+
+# 7. pago de llamadas y recargas
+minutos = int(input('ingrese la duracion en minutos: '))
+subtotal = sum(1.0 if i <= 5 else (0.8 if i <= 8 else (0.7 if i <= 10 else 0.5)) for i in range(1, minutos + 1))
+print(f'subtotal: s/ {subtotal:.2f}')
+
+# 8. orden de tres numeros enteros
+n1 = int(input('ingrese el primer numero: '))
+n2 = int(input('ingrese el segundo numero: '))
+n3 = int(input('ingrese el tercer numero: '))
+
+orden = input('desea ordenar de forma ascendente o descentente?: ').strip().lower()
+lista = sorted({n1,n2,n3}, reverse= (orden == 'descendente'))
+
+print('numeros ordenados:', lista)
+
+# 9. el descuento en camisas
+cantidad = int(input('ingrese la cantidad de camisas: '))
+precio = float(input('ingrese el precio unitario: '))
+
+totl = cantidad * precio
+if cantidad <= 4:
+    desc = totl * 0.125
+elif cantidad <= 8:
+    desc = totl * 0.20
+else:
+    desc = totl * 0.315
+print(f'sin descuento: s/{totl:.2f}')
+print(f'descuento: s/{desc:.2f}')
+print(f'con descuento: s/{totl - desc:.2f}')
+
+# 10. costo de llamadas internacionales por zona
+zonas = {
+    10: ('america del norte', 2.2),
+    12: ('america del centro', 2.5),
+    20: ('america del sur', 1.2),
+    22: ('asia', 3.5),
+    30: ('europa', 3.0),
+    32: ('africa', 3.2),
+}
+codigo = int(input('ingrese el codigo de zona: '))
+minutos = int(input('ingrese los minutos hablados: '))
+if codigo in zonas:
+    nombre, costo_min = zonas [codigo]
+    total = minutos * costo_min
+    print(f'zona: {nombre}')
+    print(f'costo total: s/{total:.2f}')
+else:
+    print('codigo de zona no valido.')
+    
